@@ -31,6 +31,7 @@ class LoginRequest extends FormRequest {
     public function messages() {
         return [
             'telphone.required' => '请填写手机号码',
+            'telphone.telphone' => '手机号码格式不正确',
             'telphone.exists' => '该手机号码未注册',
             'password.required' => '请填写密码',
             'password.between' => '密码为6~18位',

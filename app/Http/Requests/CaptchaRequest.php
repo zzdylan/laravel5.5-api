@@ -29,9 +29,9 @@ class CaptchaRequest extends FormRequest {
     public function messages() {
         return [
             'telphone.required' => '请填写手机号码',
+            'telphone.telphone' => '手机号码格式不正确',
             'telphone.unique' => '手机号码已被注册'
         ];
-        ;
     }
 
 }

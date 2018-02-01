@@ -31,6 +31,7 @@ class RegisterRequest extends FormRequest {
     public function messages() {
         return [
             'telphone.required' => '请填写手机号码',
+            'telphone.telphone' => '手机号码格式不正确',
             'telphone.unique' => '该手机号码已经被注册',
             'code.required' => '请填写验证码',
             'password.required' => '请填写密码',
