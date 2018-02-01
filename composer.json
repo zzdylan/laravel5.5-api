@@ -9,10 +9,10 @@
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+        "guzzlehttp/guzzle": "~6.0",
         "dingo/api": "2.0.0-alpha1",
         "liyu/dingo-serializer-switch": "^0.3.0",
         "tymon/jwt-auth": "dev-develop"
-        
     },
     "require-dev": {
         "filp/whoops": "~2.0",
