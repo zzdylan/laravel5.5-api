@@ -12,7 +12,8 @@
         "guzzlehttp/guzzle": "~6.0",
         "dingo/api": "2.0.0-alpha1",
         "liyu/dingo-serializer-switch": "^0.3.0",
-        "tymon/jwt-auth": "dev-develop"
+        "tymon/jwt-auth": "dev-develop",
+        "gregwar/captcha": "^1.1"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
