@@ -22,9 +22,9 @@ class RegisterRequest extends FormRequest {
      */
     public function rules() {
         return [
+            'telphone' => 'required|telphone|unique:users',
             'code' => 'required',
             'password' => 'required|between:6,18',
-            'telphone' => 'required|telphone|unique:users',
         ];
     }
 
