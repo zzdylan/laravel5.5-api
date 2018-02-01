@@ -15,6 +15,8 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', ['middleware' => ['serializer:array', 'cors'], 'namespace' => 'App\Http\Controllers\Api'], function ($api) {
     #发送短信验证码
     $api->post('/send_sms_code', ['uses' => 'VerificationCodesController@store']);
+    #获取图形验证码
+    $api->post('/captchas', 'CaptchasController@store');
     #用户注册接口
     $api->post('/register', ['uses' => 'AuthController@register']);
     #用户登录接口
