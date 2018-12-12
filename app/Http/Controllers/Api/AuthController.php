@@ -14,13 +14,7 @@ class AuthController extends BaseController {
 
     public function register(RegisterRequest $request) {
         $input = $request->all();
-        //图形验证码暂时去掉
-        //$captcha = \Cache::get('captcha.' . $input['telphone']);
-//        if ($input['captcha'] != $captcha) {
-//            // 返回401
-//            return $this->response->errorUnauthorized('图形验证码错误');
-//        }
-        $smsCode = \Cache::get('sms_code.' . $input['telphone']);
+        $smsCode = \Cache::get("verify_code.register.{$input['telphone']}");
         if ($input['code'] != $smsCode) {
             // 返回401
             return $this->response->errorUnauthorized('短信验证码错误');

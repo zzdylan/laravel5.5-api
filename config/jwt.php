@@ -149,7 +149,7 @@ return [
     'required_claims' => [
         'iss',
         'iat',
-        'exp',
+        //'exp',//有效期设置为null代表永久，这个时候这块要注释掉
         'nbf',
         'sub',
         'jti',

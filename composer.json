@@ -13,7 +13,9 @@
         "dingo/api": "2.0.0-alpha1",
         "liyu/dingo-serializer-switch": "^0.3.0",
         "tymon/jwt-auth": "dev-develop",
-        "gregwar/captcha": "^1.1"
+        "gregwar/captcha": "^1.1",
+        "overtrue/easy-sms": "^1.1",
+        "barryvdh/laravel-cors": "^0.11.2"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
