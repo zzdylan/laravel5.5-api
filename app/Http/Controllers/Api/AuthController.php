@@ -9,13 +9,13 @@ use App\Http\Requests\LoginRequest;
 use Auth;
 use JWTAuth;
 use App\Http\Transformers\UserTransformer;
+use App\Services\VerificationCode;
 
 class AuthController extends BaseController {
 
     public function register(RegisterRequest $request) {
         $input = $request->all();
-        $smsCode = \Cache::get("verify_code.register.{$input['telphone']}");
-        if ($input['code'] != $smsCode) {
+        if (!VerificationCode::check($input['telphone'],$input['code'],'register')) {
             // 返回401
             return $this->response->errorUnauthorized('短信验证码错误');
         }
@@ -25,10 +25,6 @@ class AuthController extends BaseController {
                     'telphone' => $input['telphone'],
                     'password' => bcrypt($input['password'])
         ]);
-
-        //让验证码失效
-        //\Cache::forget('captcha.' . $input['telphone']);
-        \Cache::forget('sms_code.' . $input['telphone']);
 
         //自动登陆并返回token
         $token = $this->guard()->login($user, true);
